@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+{% block title %}Home - ChazeFashion{% endblock %}
+{% block content %}
+<!-- Search Bar -->
+<div class="flex justify-center mb-8">
+    <form method="get" action="{% url 'product_list' %}" class="w-full max-w-2xl flex">
+        <input type="text" name="q" placeholder="Search for products, brands, categories..." class="flex-1 px-4 py-2 rounded-l-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+        <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-r-lg font-semibold hover:bg-blue-700 transition">Search</button>
+    </form>
+</div>
+
+<!-- Category Section -->
+<h2 class="text-2xl font-bold mb-4 text-blue-700">Shop by Category</h2>
+<div class="flex space-x-4 overflow-x-auto pb-4 mb-8">
+    <a href="{% url 'product_list' %}?category=Men" class="flex flex-col items-center bg-white rounded-xl shadow-md px-6 py-4 hover:bg-blue-50 transition min-w-[120px]">
+        <span class="text-3xl mb-2">👔</span>
+        <span class="font-semibold text-gray-700">Men</span>
+    </a>
+    <a href="{% url 'product_list' %}?category=Women" class="flex flex-col items-center bg-white rounded-xl shadow-md px-6 py-4 hover:bg-blue-50 transition min-w-[120px]">
+        <span class="text-3xl mb-2">👗</span>
+        <span class="font-semibold text-gray-700">Women</span>
+    </a>
+    <a href="{% url 'product_list' %}?category=Boys" class="flex flex-col items-center bg-white rounded-xl shadow-md px-6 py-4 hover:bg-blue-50 transition min-w-[120px]">
+        <span class="text-3xl mb-2">🧒</span>
+        <span class="font-semibold text-gray-700">Boys</span>
+    </a>
+    <a href="{% url 'product_list' %}?category=Girls" class="flex flex-col items-center bg-white rounded-xl shadow-md px-6 py-4 hover:bg-blue-50 transition min-w-[120px]">
+        <span class="text-3xl mb-2">👧</span>
+        <span class="font-semibold text-gray-700">Girls</span>
+    </a>
+    <a href="{% url 'product_list' %}?category=Toddler" class="flex flex-col items-center bg-white rounded-xl shadow-md px-6 py-4 hover:bg-blue-50 transition min-w-[120px]">
+        <span class="text-3xl mb-2">👶</span>
+        <span class="font-semibold text-gray-700">Toddler</span>
+    </a>
+</div>
+
+<!-- Brand Section -->
+<h2 class="text-2xl font-bold mb-4 text-blue-700">Shop by Brand</h2>
+<div class="flex space-x-4 overflow-x-auto pb-4 mb-8">
+    <a href="{% url 'product_list' %}?brand=Fila" class="flex flex-col items-center bg-white rounded-xl shadow-md px-6 py-4 hover:bg-blue-50 transition min-w-[120px]">
+        <img src="https://seeklogo.com/images/F/fila-logo-04B2AFAF6E-seeklogo.com.png" alt="Fila" class="h-10 w-auto mb-2 object-contain" onerror="this.style.display='none';this.insertAdjacentHTML('afterend', '<span class=\'text-4xl mb-2\'>👟</span>');" />
+        <span class="font-semibold text-gray-700">Fila</span>
+    </a>
+    <a href="{% url 'product_list' %}?brand=Sparkey" class="flex flex-col items-center bg-white rounded-xl shadow-md px-6 py-4 hover:bg-blue-50 transition min-w-[120px]">
+        <span class="text-4xl mb-2">⚡</span>
+        <span class="font-semibold text-gray-700">Sparkey</span>
+    </a>
+    <a href="{% url 'product_list' %}?brand=Zara" class="flex flex-col items-center bg-white rounded-xl shadow-md px-6 py-4 hover:bg-blue-50 transition min-w-[120px]">
+        <img src="https://1000logos.net/wp-content/uploads/2017/06/Zara-Logo-2008.png" alt="Zara" class="h-10 w-auto mb-2 object-contain" onerror="this.style.display='none';this.insertAdjacentHTML('afterend', '<span class=\'text-4xl mb-2\'>👗</span>');" />
+        <span class="font-semibold text-gray-700">Zara</span>
+    </a>
+    <a href="{% url 'product_list' %}?brand=Adidas" class="flex flex-col items-center bg-white rounded-xl shadow-md px-6 py-4 hover:bg-blue-50 transition min-w-[120px]">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Adidas_Logo.svg" alt="Adidas" class="h-10 w-auto mb-2 object-contain" />
+        <span class="font-semibold text-gray-700">Adidas</span>
+    </a>
+    <a href="{% url 'product_list' %}?brand=Reebok" class="flex flex-col items-center bg-white rounded-xl shadow-md px-6 py-4 hover:bg-blue-50 transition min-w-[120px]">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Reebok_2019_logo.svg" alt="Reebok" class="h-10 w-auto mb-2 object-contain" onerror="this.style.display='none';this.insertAdjacentHTML('afterend', '<span class=\'text-4xl mb-2\'>👟</span>');" />
+        <span class="font-semibold text-gray-700">Reebok</span>
+    </a>
+    <a href="{% url 'product_list' %}?brand=Rupa" class="flex flex-col items-center bg-white rounded-xl shadow-md px-6 py-4 hover:bg-blue-50 transition min-w-[120px]">
+        <span class="text-4xl mb-2">🧥</span>
+        <span class="font-semibold text-gray-700">Rupa</span>
+    </a>
+    <a href="{% url 'product_list' %}?brand=Dollar" class="flex flex-col items-center bg-white rounded-xl shadow-md px-6 py-4 hover:bg-blue-50 transition min-w-[120px]">
+        <span class="text-4xl mb-2">💲</span>
+        <span class="font-semibold text-gray-700">Dollar</span>
+    </a>
+    <a href="{% url 'product_list' %}?brand=Kothari" class="flex flex-col items-center bg-white rounded-xl shadow-md px-6 py-4 hover:bg-blue-50 transition min-w-[120px]">
+        <span class="text-4xl mb-2">🧵</span>
+        <span class="font-semibold text-gray-700">Kothari</span>
+    </a>
+    <a href="{% url 'product_list' %}?brand=Amul" class="flex flex-col items-center bg-white rounded-xl shadow-md px-6 py-4 hover:bg-blue-50 transition min-w-[120px]">
+        <span class="text-4xl mb-2">🥛</span>
+        <span class="font-semibold text-gray-700">Amul</span>
+    </a>
+</div>
+
+<!-- Featured/Trending Products -->
+<h2 class="text-2xl font-bold mb-4 text-blue-700">Trending Now</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-10">
+    {% for product in products|slice:":4" %}
+    <div class="bg-gradient-to-br from-blue-100 to-blue-50 rounded-2xl shadow-lg p-4 flex flex-col group border border-blue-200">
+        <div class="relative h-44 mb-3 overflow-hidden rounded-xl">
+            {% if product.pr_images %}
+                <img src="{{ product.pr_images.url }}" alt="{{ product.pr_name }}" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300">
+            {% else %}
+                <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80" alt="No image" class="h-full w-full object-cover opacity-60">
+                <span class="absolute inset-0 flex items-center justify-center text-4xl text-gray-300">👕</span>
+            {% endif %}
+        </div>
+        <h3 class="text-base font-semibold mb-1 truncate">{{ product.pr_name }}</h3>
+        <span class="text-blue-600 font-bold text-lg mb-2">₹{{ product.pr_price }}</span>
+        <form method="post" action="{% url 'add_to_cart_session' product.pr_id %}" class="mt-auto">
+            {% csrf_token %}
+            <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 transition">Add to Cart</button>
+        </form>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- Main Product Grid -->
+<h2 class="text-2xl font-bold mb-4 text-blue-700">All Products</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+    {% for product in products %}
+    <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-shadow p-4 flex flex-col group">
+        <div class="relative h-56 mb-4 overflow-hidden rounded-xl">
+            {% if product.pr_images %}
+                <img src="{{ product.pr_images.url }}" alt="{{ product.pr_name }}" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300">
+            {% else %}
+                <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80" alt="No image" class="h-full w-full object-cover opacity-60">
+                <span class="absolute inset-0 flex items-center justify-center text-5xl text-gray-300">👕</span>
+            {% endif %}
+        </div>
+        <h2 class="text-lg font-semibold mb-1 truncate">{{ product.pr_name }}</h2>
+        <p class="text-gray-500 mb-2 text-sm">{{ product.pr_cate }}{% if product.pr_brand %} | {{ product.pr_brand }}{% endif %}</p>
+        <div class="flex items-center justify-between mb-4">
+            <span class="text-xl font-bold text-blue-600">₹{{ product.pr_price }}</span>
+        </div>
+        <form method="post" action="{% url 'add_to_cart_session' product.pr_id %}" class="mt-auto">
+            {% csrf_token %}
+            <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 transition">Add to Cart</button>
+        </form>
+    </div>
+    {% empty %}
+    <div class="col-span-full text-center py-12">
+        <div class="text-6xl mb-4">👕</div>
+        <h3 class="text-xl font-semibold mb-2">No products available</h3>
+        <p class="text-gray-500">Check back soon for new arrivals!</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %} 

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}ChazeFashion{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    {% block extra_head %}{% endblock %}
+</head>
+<body class="bg-gradient-to-br from-blue-50 via-white to-pink-100 flex flex-col min-h-screen">
+    <!-- Navbar -->
+    <nav class="bg-white shadow sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="{% url 'home' %}" class="flex items-center space-x-2">
+                <span class="inline-block bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-xl">C</span>
+                <span class="text-2xl font-bold text-blue-600 tracking-tight">ChazeFashion</span>
+            </a>
+            <div class="flex items-center space-x-8">
+                <a href="{% url 'home' %}" class="text-gray-700 hover:text-blue-600 font-medium transition">Home</a>
+                <a href="{% url 'cart_session' %}" class="relative text-gray-700 hover:text-blue-600 font-medium transition">
+                    Cart
+                    {% if cart_count %}
+                        <span class="absolute -top-2 -right-4 bg-blue-600 text-white text-xs rounded-full px-2 py-0.5">{{ cart_count }}</span>
+                    {% endif %}
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!-- Decorative SVG Wave Background -->
+    <div class="relative w-full -mb-8 z-0">
+      <svg viewBox="0 0 1440 120" class="w-full h-24 md:h-32 lg:h-40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#e0e7ff" fill-opacity="1" d="M0,80L80,74.7C160,69,320,58,480,58.7C640,59,800,75,960,80C1120,85,1280,75,1360,69.3L1440,64L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"/>
+      </svg>
+    </div>
+    <main class="flex-1 container mx-auto px-4 py-8">
+        {% block content %}{% endblock %}
+    </main>
+    <footer class="bg-white shadow mt-8">
+        <div class="container mx-auto px-4 py-6 text-center text-gray-500 text-sm">
+            &copy; {{ year|default:2024 }} <span class="font-semibold text-blue-600">ChazeFashion</span>. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html> 
