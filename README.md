@@ -1,6 +1,4 @@
-keshavkumar6: give me  a readme file and dont  save it 
 
-GitHub Copilot: Here’s a sample README file for your Django-based product catalog project:
 
 # ChazeFashion Product Catalog
 
